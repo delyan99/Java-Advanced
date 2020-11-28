@@ -16,14 +16,26 @@ public class BalancedParentheses_06 {
 			}else if(character == '[') {
 				stack.push('[');
 			}else if(character == ')') {
+				if(stack.isEmpty()) {
+					System.out.println("NO");
+					return;
+				}
 				if(stack.peek() == '(') {
 					stack.pop();
 				}
 			}else if(character == '}') {
+				if(stack.isEmpty()) {
+					System.out.println("NO");
+					return;
+				}
 				if(stack.peek() == '{') {
 					stack.pop();
 				}
 			}else if(character == ']') {
+				if(stack.isEmpty()) {
+					System.out.println("NO");
+					return;
+				}
 				if(stack.peek() == '[') {
 					stack.pop();
 				}
