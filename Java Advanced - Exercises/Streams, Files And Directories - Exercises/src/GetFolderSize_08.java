@@ -6,13 +6,7 @@ public class GetFolderSize_08 {
         File files = new File(path);
         int sum = 0;
         for (File file : files.listFiles()) {
-            if(file.isDirectory()){
-                for (File innerFile : file.listFiles()) {
-                    sum += innerFile.length();
-                }
-            }else{
-                sum += file.length();
-            }
+            sum += file.length();
         }
         PrintWriter writer = new PrintWriter("getFolderSize_08.txt");
         writer.println("Folder size: " + sum);
