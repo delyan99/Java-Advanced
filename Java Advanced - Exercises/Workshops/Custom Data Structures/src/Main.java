@@ -21,5 +21,16 @@ public class Main {
         }
 
         smartArray.forEach(p-> System.out.println(p));
+
+
+
+        Stack stack = new Stack();
+        for (int i = 0; i < 10; i++) {
+            stack.push(i);
+        }
+
+        System.out.println(stack.pop());
+        System.out.println(stack.peek());
+        stack.forEach(p-> System.out.println(p));
     }
 }
