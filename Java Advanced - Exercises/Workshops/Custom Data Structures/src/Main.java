@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,5 +31,36 @@ public class Main {
         System.out.println(stack.pop());
         System.out.println(stack.peek());
         stack.forEach(p-> System.out.println(p));
+
+
+        LinkedList linkedList = new LinkedList();
+        for (int i = 0; i < 10; i++) {
+            linkedList.addFirst(i);
+        }
+        for (int i = 0; i < 10; i++) {
+            linkedList.addLast(i);
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println(linkedList.get(i));
+        }
+        System.out.println(linkedList.get(10));
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(linkedList.removeFirst());
+        }
+        linkedList.removeFirst();
+        linkedList.forEach(System.out::println);
+
+        int[] array = linkedList.toArray();
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.println(linkedList.removeLast());
+        }
+        System.out.println(linkedList.removeLast());
+
+        System.out.println();
+
     }
 }
