@@ -1,11 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomList <T extends Comparable<T>>{
+public class CustomList <T extends Comparable>{
     private List<T> data;
 
     public List<T> getData() {
-        return data;
+        return this.data;
+    }
+
+    public int size(){
+        return this.data.size();
     }
 
     public CustomList(){
