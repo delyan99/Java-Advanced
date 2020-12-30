@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
@@ -6,9 +7,9 @@ public class Book {
     private List<String> authors;
 
     public Book(String title, int year, String... authors){
-        this.title = title;
-        this.year = year;
-        this.authors = List.of(authors);
+        setTitle(title);
+        setYear(year);
+        setAuthors(authors);
     }
 
     public void setTitle(String title) {
@@ -19,8 +20,12 @@ public class Book {
         this.year = year;
     }
 
-    public void setAuthors(List<String> authors) {
-        this.authors = authors;
+    public void setAuthors(String... authors) {
+        if(authors.length == 0){
+            this.authors = new ArrayList<>();
+            return;
+        }
+        this.authors = List.of(authors);
     }
 
     public String getTitle() {
