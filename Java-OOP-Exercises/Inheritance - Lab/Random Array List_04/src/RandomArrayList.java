@@ -1,10 +1,16 @@
 import java.util.ArrayList;
+import java.util.Random;
 
-public class RandomArrayList extends ArrayList<Object> {
+public class RandomArrayList<T> extends ArrayList<T> {
 
-    private Object object;
+    private Random random;
+
+    public RandomArrayList(){
+        this.random = new Random();
+    }
 
     public Object getRandomElement(){
-        return super.remove(this.object);
+        int index = random.nextInt(super.size() - 1);
+        return super.remove(index);
     }
 }
