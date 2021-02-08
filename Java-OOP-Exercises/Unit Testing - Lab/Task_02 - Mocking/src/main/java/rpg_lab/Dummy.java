@@ -1,16 +1,19 @@
 package rpg_lab;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 public class Dummy implements Target{
 
     private int health;
     private int experience;
+    private List<Weapon> weapons;
 
-    public Dummy(int health, int experience) {
+    public Dummy(int health, int experience, List<Weapon> weapons) {
         this.health = health;
         this.experience = experience;
+        this.weapons = weapons;
     }
 
     @Override
@@ -41,4 +44,9 @@ public class Dummy implements Target{
         return this.health <= 0;
     }
 
+    @Override
+    public Weapon dropWeapon(Random random){
+        int index = random.nextInt();
+        return this.weapons.get(index);
+    }
 }

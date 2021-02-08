@@ -26,12 +26,13 @@ public class Hero {
         return this.weapon;
     }
 
-    public void attack(Target target) {
+    public Weapon attack(Target target, Random random) {
         this.weapon.attack(target);
 
         if (target.isDead()) {
             this.experience += target.giveExperience();
-
+            return target.dropWeapon(random);
         }
+        return null;
     }
 }
